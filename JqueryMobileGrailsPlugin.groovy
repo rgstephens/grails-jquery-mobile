@@ -2,7 +2,7 @@ class JqueryMobileGrailsPlugin {
     // the plugin version
     def version = "0.1"
     // the version or versions of Grails the plugin is designed for
-    def grailsVersion = "1.3.6 > *"
+    def grailsVersion = "1.3.7 > *"
     // the other plugins this plugin depends on
     def dependsOn = [:]
     // resources that are excluded from plugin packaging
@@ -11,11 +11,10 @@ class JqueryMobileGrailsPlugin {
     ]
 
     // TODO Fill in these fields
-    def author = "Your name"
-    def authorEmail = ""
-    def title = "Plugin summary/headline"
-    def description = '''\\
-Brief description of the plugin.
+    def author = "Aaron Eischeid"
+    def authorEmail = "a.eischeid@gmail.com"
+    def title = "jQuery-mobile"
+    def description = '''Templates for dynamic scaffolding with jquery mobile 
 '''
 
     // URL to the plugin's documentation
