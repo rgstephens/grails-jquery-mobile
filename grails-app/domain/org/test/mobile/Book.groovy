@@ -21,7 +21,6 @@ class Book {
 		averageRating range: 1..5
 		numberOfPages nullable: true, min: 0
 		genre nullable: true
-		cover nullable: true
 		ebook()
 	}
 

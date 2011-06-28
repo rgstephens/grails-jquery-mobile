@@ -2,18 +2,18 @@
 <%=packageName%>
 <!doctype html>
 <html>
-    <head>
-        <meta name="layout" content="mobile">
-        <g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
-    </head>
+	<head>
+		<meta name="layout" content="mobile">
+		<g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}" />
+		<title><g:message code="default.list.label" args="[entityName]" /></title>
+	</head>
 	<body>
 		<div data-role="page">
 			<div data-role="header">
 				<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 				<div data-role="navbar">
 					<ul>
-						<li><a data-icon="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+						<li><a data-icon="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label" default="Home" /></a></li>
 						<li><g:link data-icon="plus" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 					</ul>
 				</div>
@@ -37,5 +37,5 @@
 			<div data-role="footer">
 			</div>
 		</div>
-    </body>
+	</body>
 </html>

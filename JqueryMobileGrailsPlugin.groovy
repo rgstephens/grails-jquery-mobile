@@ -11,6 +11,7 @@ class JqueryMobileGrailsPlugin {
       "grails-app/views/author/*",
       "grails-app/domain/*",
       "grails-app/controllers/*",
+      "test/*"
     ]
 
     def author = "Aaron Eischeid"
