@@ -7,15 +7,18 @@ class JqueryMobileGrailsPlugin {
     def dependsOn = [:]
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
-            "grails-app/views/error.gsp"
+      "grails-app/views/book/*",
+      "grails-app/views/author/*",
+      "grails-app/domain/*",
+      "grails-app/controllers/*",
     ]
 
-    // TODO Fill in these fields
     def author = "Aaron Eischeid"
     def authorEmail = "a.eischeid@gmail.com"
-    def title = "jQuery-mobile"
-    def description = '''Templates for dynamic scaffolding with jquery mobile 
-'''
+    def title = "jquery-mobile"
+    def description = '''
+        Templates for dynamic scaffolding with jquery mobile 
+    '''
 
     // URL to the plugin's documentation
     def documentation = "http://grails.org/plugin/jquery-mobile"

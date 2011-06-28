@@ -21,7 +21,7 @@
 				</ul>
 			</div>
 			<div data-role="footer">
-				footer...
+				<p>Welcome</p>
 			</div>
 		</div>
 		<div data-role="page" id="status">
