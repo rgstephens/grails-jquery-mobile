@@ -11,9 +11,6 @@
 			</div>
 			<div data-role="content">
 				<ul data-role="listview" data-theme="c">
-					<li data-role="list-divider">App Info:</li>
-					<li><a href="#status">Status</a></li>
-					<li><a href="#plugins">Plugins</a></li>
 					<li data-role="list-divider">Controllers:</li>
 					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
 						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
@@ -21,7 +18,12 @@
 				</ul>
 			</div>
 			<div data-role="footer">
-				<p>Welcome</p>
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#status">Status</a></li>
+						<li><a href="#plugins">Plugins</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<div data-role="page" id="status">
