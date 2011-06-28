@@ -56,7 +56,7 @@
 						<% } else if (p.type == Date || p.type == java.sql.Date || p.type ==
 						java.sql.Time || p.type == Calendar) { %>
 						<span class="ui-block-b">
-							<g:formatDate date="\${${propertyName}?.${p.name}}" />
+							<g:formatDate date="\${${propertyName}?.${p.name}}" style="SHORT" />
 						</span>
 						<% } else if(!p.type.isArray()) { %>
 						<span class="ui-block-b">
