@@ -1,17 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
-		<title><g:layoutTitle default="Grails"/></title>
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css" />
-		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon"/>
-		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-		<script src="http://code.jquery.com/jquery-1.5.min.js"></script>
-		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js"></script>
-		<g:layoutHead/>
+		<title><g:layoutTitle default="Grails" /></title>
+		<link rel="stylesheet" href="${resource(dir:'css',file:'css/jquery.mobile-1.0b1.min.css')}" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="icon" type="image/png" href="${resource(dir:'images',file:'mobile-icon.png',absolute:'true')}">
+		<link rel="apple-touch-icon" href="${resource(dir:'images',file:'mobile-icon.png',absolute:'true')}"/>
+		<link rel="apple-touch-icon-precomposed" href="${resource(dir:'images',file:'mobile-icon.png',absolute:'true')}"/>
+		<g:javascript src="js/jquery-1.6.1.min.js" />
+		<g:javascript src="js/app.js" />
+		<g:javascript src="js/jquery.mobile-1.0b1.min.js" />
+		<g:layoutHead />
 	</head>
 	<body>
-		<div data-role="page">
-			<g:layoutBody/>
-		</div>
+		<g:layoutBody />
 	</body>
 </html>
