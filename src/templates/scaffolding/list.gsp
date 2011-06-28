@@ -25,7 +25,7 @@
 				<ul data-role="listview" data-split-icon="gear" data-filter="true">
 					<g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
 						<li>
-							<g:link action="show" id="\${${propertyName}.id}">\${${propertyName}}</g:link>
+							<g:link action="show" id="\${${propertyName}.id}" data-rel="dialog">\${${propertyName}}</g:link>
 							<g:link action="edit" id="\${${propertyName}.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 						</li>
 					</g:each>
@@ -33,8 +33,6 @@
 				<fieldset class="pagination">
 					<g:paginate total="\${${propertyName}Total}" />
 				</fieldset>
-			</div>
-			<div data-role="footer">
 			</div>
 		</div>
 	</body>

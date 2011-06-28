@@ -15,57 +15,57 @@
 			</h1>
 		</div>
 		<div data-role="content">
-			<g:if test="\${flash.message}">
-				<div class="message">\${flash.message}</div>
-			</g:if>
-			<dl>
+			<ul data-role="listview">
+				<g:if test="\${flash.message}">
+					<li data-theme="e" data-icon="info" class="message">\${flash.message}</li>
+				</g:if>
 				<% excludedProps = Event.allEvents.toList() << 'version'
 				allowedNames = domainClass.persistentProperties*.name << 'id' << 'dateCreated' << 'lastUpdated'
 				props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) }
 				Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
 				props.each { p -> %>
-				<dt>
-					<g:message code="${domainClass.propertyName}.${p.name}.label"
-						default="${p.naturalName}" />
-				</dt>
+				<li>
+					<div class="ui-grid-a">
+						<span class="ui-block-a">
+							<g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" />
+						</span>
+					</div>
+				</li>
 				<% if (p.isEnum()) { %>
-				<dd>
+				<span class="ui-block-b">
 					<g:fieldValue bean="\${${propertyName}}" field="${p.name}" />
-				</dd>
+				</span>
 				<% } else if (p.oneToMany || p.manyToMany) { %>
-				<g:each in="\${${propertyName}.${p.name}}" var="${p.name[0]}">
-					<dd>
-						<g:link controller="${p.referencedDomainClass?.propertyName}"
-							action="show" id="\${${p.name[0]}.id}">\${${p.name[0]}?.encodeAsHTML()}</g:link>
-					</dd>
-				</g:each>
+				<span class="ui-block-b">
+					<ul>
+					<g:each in="\${${propertyName}.${p.name}}" var="${p.name[0]}">
+						<li>
+							<g:link controller="${p.referencedDomainClass?.propertyName}"
+								action="show" id="\${${p.name[0]}.id}">\${${p.name[0]}?.encodeAsHTML()}</g:link>
+						</li>
+					</g:each>
+					</ul>
+				</span>
 				<% } else if (p.manyToOne || p.oneToOne) { %>
-				<dd>
+				<span class="ui-block-b">
 					<g:link controller="${p.referencedDomainClass?.propertyName}"
 						action="show" id="\${${propertyName}?.${p.name}?.id}">\${${propertyName}?.${p.name}?.encodeAsHTML()}</g:link>
-				</dd>
+				</span>
 				<% } else if (p.type == Boolean || p.type == boolean) { %>
-				<dd>
+				<span class="ui-block-b">
 					<g:formatBoolean boolean="\${${propertyName}?.${p.name}}" />
-				</dd>
+				</span>
 				<% } else if (p.type == Date || p.type == java.sql.Date || p.type ==
 				java.sql.Time || p.type == Calendar) { %>
-				<dd>
+				<span class="ui-block-b">
 					<g:formatDate date="\${${propertyName}?.${p.name}}" />
-				</dd>
+				</span>
 				<% } else if(!p.type.isArray()) { %>
-				<dd>
+				<span class="ui-block-b">
 					<g:fieldValue bean="\${${propertyName}}" field="${p.name}" />
-				</dd>
+				</span>
 				<% } %> <% } %>
-			</dl>
-			<g:form>
-				<g:hiddenField name="id" value="\${${propertyName}?.id}" />
-				<g:actionSubmit data-icon="delete" action="delete"
-					value="\${message(code: 'default.button.delete.label', default: 'Delete')}" />
-			</g:form>
-		</div>
-		<div data-role="footer">
+			</ul>
 		</div>
 	</div>
 </body>

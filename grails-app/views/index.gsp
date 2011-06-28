@@ -29,15 +29,55 @@
 				<h1>App Status</h1>
 			</div>
 			<div data-role="content">
-				<ul data-role="listview" data-theme="c">
-					<li>App version: <g:meta name="app.version"/></li>
-					<li>Grails version: <g:meta name="app.grails.version"/></li>
-					<li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
-					<li>JVM version: ${System.getProperty('java.version')}</li>
-					<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-					<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-					<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-					<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
+				<ul data-role="listview" data-theme="c" data-inset="true">
+					<li>
+						<div class="ui-grid-a">
+							<span class="ui-block-a">App version:</span>
+							<span class="ui-block-b"><g:meta name="app.version"/></span>
+						</div>
+					</li>
+					<li>
+						<div class="ui-grid-a">
+							<span class="ui-block-a">Grails version:</span>
+							<span class="ui-block-b"><g:meta name="app.grails.version"/></span>
+						</div> 
+					</li>
+					<li>
+						<div class="ui-grid-a">
+							<span class="ui-block-a">Groovy version:</span>
+							<span class="ui-block-b">${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</span>
+						</div>
+					</li>
+					<li>
+						<div class="ui-grid-a">
+							<span class="ui-block-a">JVM version:</span>
+							<span class="ui-block-b">${System.getProperty('java.version')}</span>
+						</div>
+					</li>
+					<li>
+						<div class="ui-grid-a">
+							<span class="ui-block-a">Controllers:</span>
+							<span class="ui-block-b">${grailsApplication.controllerClasses.size()}</span>
+						</div>
+					</li>
+					<li>
+						<div class="ui-grid-a">
+							<span class="ui-block-a">Domains:</span>
+							<span class="ui-block-b">${grailsApplication.domainClasses.size()}</span>
+						</div>
+					</li>
+					<li>
+						<div class="ui-grid-a">
+							<span class="ui-block-a">Services:</span>
+							<span class="ui-block-b">${grailsApplication.serviceClasses.size()}</span>
+						</div>
+					</li>
+					<li>
+						<div class="ui-grid-a">
+							<span class="ui-block-a">Tag Libs:</span>
+							<span class="ui-block-b">${grailsApplication.tagLibClasses.size()}</span>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -46,10 +86,15 @@
 				<h1>Plugins</h1>
 			</div>
 			<div data-role="content">
-				<ul data-role="listview" data-theme="c">
+				<ul data-role="listview" data-theme="c" data-inset="true">
 					<g:set var="pluginManager" value="${applicationContext.getBean('pluginManager')}"/>
 					<g:each var="plugin" in="${pluginManager.allPlugins}">
-						<li>${plugin.name} - ${plugin.version}</li>
+						<li>
+							<div class="ui-grid-a">
+								<span class="ui-block-a">${plugin.name} :</span>
+								<span class="ui-block-b">${plugin.version}</span>
+							</div>
+						</li>
 					</g:each>
 				</ul>
 			</div>
