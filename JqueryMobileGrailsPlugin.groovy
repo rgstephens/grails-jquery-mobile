@@ -14,8 +14,8 @@ class JqueryMobileGrailsPlugin {
       "test/*"
     ]
 
-    def author = "Aaron Eischeid"
-    def authorEmail = "a.eischeid@gmail.com"
+    def author = "Greg Stephens"
+    def authorEmail = "greg@stephens.cc"
     def title = "jquery-mobile"
     def description = '''
         Templates for dynamic scaffolding with jquery mobile 

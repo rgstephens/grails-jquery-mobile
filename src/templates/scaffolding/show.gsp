@@ -14,6 +14,13 @@
 				<g:message code="default.show.label" args="[entityName]" />
 			</h1>
 		</div>
+		<div data-role="navbar">
+		  <ul>
+		    <li><a data-icon="home" href="${createLink(uri: '/')}"><g:message code="default.home.label" default="Home" /></a></li>
+		    <li><g:link data-icon="grid" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+		    <li><g:link data-icon="plus" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+		  </ul>
+		</div>
 		<div data-role="content">
 			<ul data-role="listview">
 				<g:if test="\${flash.message}">
